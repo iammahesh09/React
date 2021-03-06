@@ -72,21 +72,20 @@ class Posts extends Component {
     showPosts() {
         if (!this.state.isToggle) return (<h3 className="text-center text-warning">No Post's List</h3>);
         return (
-            this.state.posts.map((post, index) => {
-                    <div className="col-4">
+            this.state.posts.map(post => 
+                <div className="col-4" key={post.id}>
                         <SingalPost
-                            key={post.id}
                             id={post.id}
                             title={post.title}
                             subtitle={post.subtitle}
                             description={post.description}
                             availability={post.isAvailable}
-                            updatePost={<AddPost />}
                         >
                             <input type="text" className="form-control" value={post.title} onChange={this.onTitleChange.bind(this, post.id)} />
                         </SingalPost>
                     </div>
-            })
+
+            )
         )
 
     }

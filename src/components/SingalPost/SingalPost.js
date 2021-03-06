@@ -10,8 +10,6 @@ const SingalPost = (props) => {
                     <div className="card-subtitle mb-2 text-muted">{props.subtitle}</div>
                     <p className="card-text">{props.description}</p>
                     <div>{props.children}</div>
-                    <hr />
-                    <div>{props.updatePost}</div>
                 </div>
             </div>
         </React.Fragment>

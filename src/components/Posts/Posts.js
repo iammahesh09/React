@@ -4,40 +4,51 @@ import Dialog from "../Dialog/Dialog";
 import SingalPost from "../SingalPost/SingalPost";
 
 class Posts extends Component {
-    state = {
-        posts: [
-            {
-                id:100,
-                title: "Clean kitchen",
-                subtitle: "Home",
-                description: "Don't forget the are under the sink",
-                isAvailable: true
-            },
-            {
-                id: 200,
-                title: "Call Eric",
-                subtitle: "Home",
-                description: "Remind him to do his taxes",
-                isAvailable: true
-            },
-            {
-                id: 300,
-                title: "Water flowers",
-                subtitle: "Home",
-                description: "Don't forget the ones in the garden!",
-                isAvailable: false
-            },
-            {
-                id: 400,
-                title: "flowers",
-                subtitle: "Home",
-                description: "Don't forget the ones in the garden!",
-                isAvailable: true
-            }
-        ],
-        title: "Posts List",
-        isToggle: true,
-    };
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            posts: [
+                {
+                    id: 100,
+                    title: "Clean kitchen",
+                    subtitle: "Home",
+                    description: "Don't forget the are under the sink",
+                    isAvailable: true
+                },
+                {
+                    id: 200,
+                    title: "Call Eric",
+                    subtitle: "Home",
+                    description: "Remind him to do his taxes",
+                    isAvailable: true
+                },
+                {
+                    id: 300,
+                    title: "Water flowers",
+                    subtitle: "Home",
+                    description: "Don't forget the ones in the garden!",
+                    isAvailable: false
+                },
+                {
+                    id: 400,
+                    title: "flowers",
+                    subtitle: "Home",
+                    description: "Don't forget the ones in the garden!",
+                    isAvailable: true
+                }
+            ],
+            title: "Posts List",
+            isToggle: true,
+        };
+
+        console.log('Post.js - constructor updated');
+    }
+
+    static getDerivedStateFromProps(props, state) {
+        console.log('Post.js - getDerivedStateFromProps updated');
+        return state;
+    }
 
     updateTitle(e) {
         e.preventDefault();
@@ -93,6 +104,7 @@ class Posts extends Component {
 
 
     render() {
+        console.log('Post.js - render updated');
         return (
             <React.Fragment>
                 <div className="text-center mt-3 mb-2">
@@ -132,7 +144,13 @@ class Posts extends Component {
                 </div>
             </React.Fragment>
         );
+        
     }
+
+    componentDidMount(){
+        console.log('Post.js - componentDidMount updated');
+    }
+
 }
 
 export default Posts;

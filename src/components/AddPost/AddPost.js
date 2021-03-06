@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
 class AddPost extends Component {
+    constructor(props) {
+        super(props)
 
-    state = {
-        title: "",
-        subtitle: "",
-        description: "Remind him to do his taxes",
-        isAvailable: true
+        this.state = {
+            title: "",
+            subtitle: "",
+            description: "Remind him to do his taxes",
+            isAvailable: true
+        }
+        console.log('AddPost.js - constructor updated');
     }
 
     onSubmitPost = (e) => {
@@ -21,6 +25,7 @@ class AddPost extends Component {
     }
 
     render() {
+        console.log('AddPost.js - render updated');
         return (
             <React.Fragment>
                 <form onSubmit={this.onSubmitPost.bind(this)}>
@@ -47,6 +52,10 @@ class AddPost extends Component {
                 </form>
             </React.Fragment>
         )
+    }
+
+    componentDidMount() {
+        console.log('AddPost.js - componentDidMount updated');
     }
 }
 

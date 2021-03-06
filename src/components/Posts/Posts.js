@@ -42,13 +42,37 @@ class Posts extends Component {
             isToggle: true,
         };
 
-        console.log('Post.js - constructor updated');
+        console.log('Post.js - constructor called');
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log('Post.js - getDerivedStateFromProps updated');
+        console.log('Post.js - getDerivedStateFromProps fired');
         return state;
     }
+
+    componentDidMount() {
+        console.log('Post.js - componentDidMount called');
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('Post.js - shouldComponentUpdate called');
+        return true
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('Post.js - getSnapshotBeforeUpdate called');
+        return 10;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('Post.js - componentDidUpdate called');
+    }
+
+    componentWillUnmount() {
+        console.log('Post.js - componentWillUnmount called');
+    }
+
+
 
     updateTitle(e) {
         e.preventDefault();
@@ -104,7 +128,7 @@ class Posts extends Component {
 
 
     render() {
-        console.log('Post.js - render updated');
+        console.log('Post.js - render called');
         return (
             <React.Fragment>
                 <div className="text-center mt-3 mb-2">
@@ -147,9 +171,6 @@ class Posts extends Component {
         
     }
 
-    componentDidMount(){
-        console.log('Post.js - componentDidMount updated');
-    }
 
 }
 

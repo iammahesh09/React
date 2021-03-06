@@ -10,7 +10,7 @@ class AddPost extends Component {
             description: "Remind him to do his taxes",
             isAvailable: true
         }
-        console.log('AddPost.js - constructor updated');
+        console.log('AddPost.js - constructor called');
     }
 
     onSubmitPost = (e) => {
@@ -24,8 +24,30 @@ class AddPost extends Component {
         })
     }
 
+
+    componentDidMount() {
+        console.log('AddPost.js - componentDidMount called');
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('AddPost.js - shouldComponentUpdate called');
+        return true
+    }
+
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log('AddPost.js - getSnapshotBeforeUpdate called');
+        return 10;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('AddPost.js - componentDidUpdate Updated');
+    }
+
+    componentWillUnmount() {
+        console.log('AddPost.js - componentWillUnmount called');
+    }
+
     render() {
-        console.log('AddPost.js - render updated');
+        console.log('AddPost.js - render called');
         return (
             <React.Fragment>
                 <form onSubmit={this.onSubmitPost.bind(this)}>
@@ -54,9 +76,7 @@ class AddPost extends Component {
         )
     }
 
-    componentDidMount() {
-        console.log('AddPost.js - componentDidMount updated');
-    }
+
 }
 
 export default AddPost;

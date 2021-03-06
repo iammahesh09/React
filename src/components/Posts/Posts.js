@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AddPost from "../AddPost/AddPost";
+import Dialog from "../Dialog/Dialog";
 import SingalPost from "../SingalPost/SingalPost";
 
 class Posts extends Component {
@@ -81,8 +82,10 @@ class Posts extends Component {
                             subtitle={post.subtitle}
                             description={post.description}
                             availability={post.isAvailable}
-                            titleChange={this.onTitleChange.bind(this, post.id)}
-                        />
+                            updatePost={<AddPost/>}
+                        >
+                            <input type="text" className="form-control" value={post.title} onChange={this.onTitleChange.bind(this, post.id)} />
+                        </SingalPost>
 
                     </div>
                 )
@@ -125,6 +128,11 @@ class Posts extends Component {
                     <div className="col-12 col-xl-6">
                         <AddPost />
                     </div>
+                </div>
+                <div>
+                    <Dialog>
+                        <div>Hello! this is dailog box</div>
+                    </Dialog>
                 </div>
             </React.Fragment>
         );

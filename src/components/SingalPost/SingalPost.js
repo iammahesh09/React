@@ -9,7 +9,9 @@ const SingalPost = (props) => {
                     <h4 className="card-title text-primary">{props.title}</h4>
                     <div className="card-subtitle mb-2 text-muted">{props.subtitle}</div>
                     <p className="card-text">{props.description}</p>
-                    <input type="text" value={props.title} onChange={props.titleChange} />
+                    <div>{props.children}</div>
+                    <hr />
+                    <div>{props.updatePost}</div>
                 </div>
             </div>
         </React.Fragment>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TitleContext from '../../Context/TitleContext'
+import UserContext from '../../Context/UserContext'
 
 class Sidebar extends Component {
     constructor(props) {
@@ -28,6 +29,13 @@ class Sidebar extends Component {
                         )
                     }
                 </ul>
+                <UserContext.Consumer>
+                    {
+                        (userName) => {
+                            return <div>{userName.getName()}</div>
+                        }
+                    }
+                </UserContext.Consumer>
             </React.Fragment>
         )
     }

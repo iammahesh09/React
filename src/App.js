@@ -3,9 +3,17 @@ import Navigation from "./components/Navigation/Navigation";
 import Posts from "./components/Posts/Posts";
 import ThemeContext from "./Context/ThemeContext";
 import TitleContext from "./Context/TitleContext";
+import UserContext from "./Context/UserContext";
 
 function App() {
   const app_name = "React";
+
+  const userData = {
+    name: "Mahesh",
+    getName: function () {
+      return `Hello! ${this.name}`;
+    }
+  }
   return (
     <div className="App">
       <div className="container">
@@ -17,7 +25,9 @@ function App() {
           <div className="col-lg-3">
             <div className="page-navigation">
               <TitleContext.Provider value="React Menus">
-                <Navigation />
+                <UserContext.Provider value={userData}>
+                  <Navigation />
+                </UserContext.Provider>
               </TitleContext.Provider>
             </div>
           </div>

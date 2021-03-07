@@ -6,7 +6,7 @@ import SingalPost from "../SingalPost/SingalPost";
 class Posts extends Component {
     constructor(props) {
         super(props);
-    
+
         this.state = {
             posts: [
                 {
@@ -14,65 +14,63 @@ class Posts extends Component {
                     title: "Clean kitchen",
                     subtitle: "Home",
                     description: "Don't forget the are under the sink",
-                    isAvailable: true
+                    isAvailable: true,
                 },
                 {
                     id: 200,
                     title: "Call Eric",
                     subtitle: "Home",
                     description: "Remind him to do his taxes",
-                    isAvailable: true
+                    isAvailable: true,
                 },
                 {
                     id: 300,
                     title: "Water flowers",
                     subtitle: "Home",
                     description: "Don't forget the ones in the garden!",
-                    isAvailable: false
+                    isAvailable: false,
                 },
                 {
                     id: 400,
                     title: "flowers",
                     subtitle: "Home",
                     description: "Don't forget the ones in the garden!",
-                    isAvailable: true
-                }
+                    isAvailable: true,
+                },
             ],
             title: "Posts List",
             isToggle: true,
         };
 
-        console.log('Post.js - constructor called');
+        console.log("Post.js - constructor called");
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log('Post.js - getDerivedStateFromProps fired');
+        console.log("Post.js - getDerivedStateFromProps fired");
         return state;
     }
 
     componentDidMount() {
-        console.log('Post.js - componentDidMount called');
+        console.log("Post.js - componentDidMount called");
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        console.log('Post.js - shouldComponentUpdate called');
-        return true
+        console.log("Post.js - shouldComponentUpdate called");
+        return true;
     }
 
     getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log('Post.js - getSnapshotBeforeUpdate called');
+        console.log("Post.js - getSnapshotBeforeUpdate called");
         return 10;
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('Post.js - componentDidUpdate called');
+        console.log("Post.js - componentDidUpdate called");
     }
 
     componentWillUnmount() {
-        console.log('Post.js - componentWillUnmount called');
+        console.log("Post.js - componentWillUnmount called");
     }
-
-
 
     updateTitle(e) {
         e.preventDefault();
@@ -90,45 +88,45 @@ class Posts extends Component {
 
     isToggle = () => {
         this.setState({
-            isToggle: !this.state.isToggle
-        })
-    }
+            isToggle: !this.state.isToggle,
+        });
+    };
 
     onTitleChange = (id, e) => {
         e.preventDefault();
-        const postIndex = this.state.posts.findIndex(post => post.id === id);
-        const posts = [...this.state.posts]
+        const postIndex = this.state.posts.findIndex((post) => post.id === id);
+        const posts = [...this.state.posts];
         posts[postIndex].title = e.target.value;
         this.setState({
-            posts
-        })
-    }
+            posts,
+        });
+    };
 
     showPosts() {
-        if (!this.state.isToggle) return (<h3 className="text-center text-warning">No Post's List</h3>);
-        return (
-            this.state.posts.map(post => 
-                <div className="col-4" key={post.id}>
-                        <SingalPost
-                            id={post.id}
-                            title={post.title}
-                            subtitle={post.subtitle}
-                            description={post.description}
-                            availability={post.isAvailable}
-                        >
-                            <input type="text" className="form-control" value={post.title} onChange={this.onTitleChange.bind(this, post.id)} />
-                        </SingalPost>
-                    </div>
-
-            )
-        )
-
+        if (!this.state.isToggle)
+            return <h3 className="text-center text-warning">No Post's List</h3>;
+        return this.state.posts.map((post) => (
+            <div className="col-4" key={post.id}>
+                <SingalPost
+                    id={post.id}
+                    title={post.title}
+                    subtitle={post.subtitle}
+                    description={post.description}
+                    availability={post.isAvailable}
+                >
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={post.title}
+                        onChange={this.onTitleChange.bind(this, post.id)}
+                    />
+                </SingalPost>
+            </div>
+        ));
     }
 
-
-
     render() {
-        console.log('Post.js - render called');
+        console.log("Post.js - render called");
         return (
             <React.Fragment>
                 <div className="text-center mt-3 mb-2">
@@ -152,9 +150,7 @@ class Posts extends Component {
                 <button className="btn btn-dark mb-3 w-100" onClick={this.isToggle}>
                     {this.state.isToggle ? "Hide Posts" : "Show Posts"}
                 </button>
-                <div className="row">
-                    {this.showPosts()}
-                </div>
+                <div className="row">{this.showPosts()}</div>
                 <hr />
                 <div className="row justify-content-center mb-5">
                     <div className="col-12 col-xl-6">
@@ -168,10 +164,7 @@ class Posts extends Component {
                 </div>
             </React.Fragment>
         );
-        
     }
-
-
 }
 
 export default Posts;

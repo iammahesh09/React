@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ThemeContext from '../../Context/ThemeContext';
 
 class AddPost extends Component {
     constructor(props) {
@@ -46,11 +47,13 @@ class AddPost extends Component {
         console.log('AddPost.js - componentWillUnmount called');
     }
 
+    static contextType = ThemeContext;
+
     render() {
         console.log('AddPost.js - render called');
         return (
             <React.Fragment>
-                <form onSubmit={this.onSubmitPost.bind(this)}>
+                <form onSubmit={this.onSubmitPost.bind(this)} class={this.context}>
                     <div className="mb-3">
                         <label htmlFor="title" className="form-label">Title</label>
                         <input type="text" value={this.state.title} onChange={this.textChange.bind(this, 'title')} className="form-control" id="title" />

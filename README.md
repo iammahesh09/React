@@ -28,13 +28,13 @@
 - static getDerivedStateFromError()
 - componentDidCatch()
 
-## React Context
+## [React Context](https://www.javatpoint.com/react-context)
 
 Context allows passing data through the component tree without passing props down manually at every level.
 
 In React application, we passed data in a top-down approach via props. Sometimes it is inconvenient for certain types of props that are required by many components in the React application. Context provides a way to pass values between components without explicitly passing a prop through every level of the component tree.
 
-### [How to use Context](https://www.javatpoint.com/react-context)
+### How to use Context
 
 There are two main steps to use the React context into the React application:
 
@@ -53,3 +53,7 @@ The React Context API is a component structure, which allows us to share data ac
     - Context.provider
     - Context.Consumer
     - Class.contextType
+
+#### Context.Consumer
+
+A React component that subscribes to context changes. Using this component lets you subscribe to a context within a function component.

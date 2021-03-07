@@ -53,7 +53,7 @@ class AddPost extends Component {
         console.log('AddPost.js - render called');
         return (
             <React.Fragment>
-                <form onSubmit={this.onSubmitPost.bind(this)} class={this.context}>
+                <form onSubmit={this.onSubmitPost.bind(this)} className={this.context}>
                     <div className="mb-3">
                         <label htmlFor="title" className="form-label">Title</label>
                         <input type="text" value={this.state.title} onChange={this.textChange.bind(this, 'title')} className="form-control" id="title" />

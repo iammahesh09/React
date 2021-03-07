@@ -106,7 +106,7 @@ class Posts extends Component {
         if (!this.state.isToggle)
             return <h3 className="text-center text-warning">No Post's List</h3>;
         return this.state.posts.map((post) => (
-            <div className="col-4" key={post.id}>
+            <div className="col-6" key={post.id}>
                 <SingalPost
                     id={post.id}
                     title={post.title}
@@ -129,7 +129,7 @@ class Posts extends Component {
         console.log("Post.js - render called");
         return (
             <React.Fragment>
-                <div className="text-center mt-3 mb-2">
+                <div className="text-center mb-2">
                     <h3 className="display-6 text-primary mb-2">{this.state.title}</h3>
                     <a
                         href="https://www.google.com/"

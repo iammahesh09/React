@@ -12,3 +12,41 @@
     top: 5px;
     right: 5px;
 }
+
+.ycp-bg-blue{
+    background-color: #0266b4;
+}
+.ycp-text-blue{
+    background-color: #0266b4;
+}
+
+.ycp-bg-green{
+    background-color: #008e46;
+}
+.ycp-text-orange{
+    background-color: #fd7f18;
+}
+.ycp-bg-orange{
+    background-color: #fd7f18;
+}
+.ycp-text-green{
+    background-color: #008e46;
+}
+.tdp-bg-green{
+    background-color: #FFFF00;
+}
+.tdp-text-green{
+    background-color: #FFFF00;
+}
+.bjp-bg-orange{
+    background-color: #F97D09;
+}
+.bjp-text-orange{
+    background-color: #F97D09;
+}
+.bjp-bg-green{
+    background-color: #278D27;
+}
+.bjp-text-green{
+    background-color: #278D27;
+}

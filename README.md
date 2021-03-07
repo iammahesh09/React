@@ -57,3 +57,19 @@ The React Context API is a component structure, which allows us to share data ac
 #### Context.Consumer
 
 A React component that subscribes to context changes. Using this component lets you subscribe to a context within a function component.
+
+## [Error Boundaries](https://www.javatpoint.com/react-error-boundaries)
+
+A JavaScript error in a part of the UI shouldn’t break the whole app. To solve this problem for React users, React 16 introduces a new concept of an “error boundary”.
+
+Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+
+**Note:**
+Sometimes, it is not possible to catch Error boundaries in React application. These are:
+
+        - Event handlers
+        - Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+        - Server-side rendering
+        - Errors are thrown in the error boundary itself rather than its children.
+
+A class component becomes an error boundary if it defines either (or both) of the lifecycle methods **static getDerivedStateFromError()** or **componentDidCatch().** Use **static getDerivedStateFromError()** to render a fallback UI after an error has been thrown. Use **componentDidCatch()** to log error information.

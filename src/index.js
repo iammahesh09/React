@@ -7,11 +7,14 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "jquery/dist/jquery.slim.min.js"
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <ErrorBoundary>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </ErrorBoundary>,
   document.getElementById('root')
 );
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddPost from "../AddPost/AddPost";
 import Dialog from "../Dialog/Dialog";
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
 import SingalPost from "../SingalPost/SingalPost";
 
 class Posts extends Component {
@@ -107,20 +108,22 @@ class Posts extends Component {
             return <h3 className="text-center text-warning">No Post's List</h3>;
         return this.state.posts.map((post) => (
             <div className="col-6" key={post.id}>
-                <SingalPost
-                    id={post.id}
-                    title={post.title}
-                    subtitle={post.subtitle}
-                    description={post.description}
-                    availability={post.isAvailable}
-                >
-                    <input
-                        type="text"
-                        className="form-control"
-                        value={post.title}
-                        onChange={this.onTitleChange.bind(this, post.id)}
-                    />
-                </SingalPost>
+                <ErrorBoundary>
+                    <SingalPost
+                        id={post.id}
+                        title={post.title}
+                        subtitle={post.subtitle}
+                        description={post.description}
+                        availability={post.isAvailable}
+                    >
+                        <input
+                            type="text"
+                            className="form-control"
+                            value={post.title}
+                            onChange={this.onTitleChange.bind(this, post.id)}
+                        />
+                    </SingalPost>
+                </ErrorBoundary>
             </div>
         ));
     }

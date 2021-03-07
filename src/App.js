@@ -1,9 +1,10 @@
 import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import Posts from "./components/Posts/Posts";
+import Navigation from "./Components/Navigation/Navigation";
+import Posts from "./Components/Posts/Posts";
 import ThemeContext from "./Context/ThemeContext";
 import TitleContext from "./Context/TitleContext";
 import UserContext from "./Context/UserContext";
+import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   const app_name = "React";
@@ -24,11 +25,13 @@ function App() {
         <div className="row">
           <div className="col-lg-3">
             <div className="page-navigation">
-              <TitleContext.Provider value="React Menus">
-                <UserContext.Provider value={userData}>
-                  <Navigation />
-                </UserContext.Provider>
-              </TitleContext.Provider>
+              <ErrorBoundary>
+                <TitleContext.Provider value="React Menus">
+                  <UserContext.Provider value={userData}>
+                    <Navigation />
+                  </UserContext.Provider>
+                </TitleContext.Provider>
+              </ErrorBoundary>
             </div>
           </div>
           <div className="col-lg-9">

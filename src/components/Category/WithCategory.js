@@ -6,7 +6,7 @@ export function WithCategory(WrappedComponent) {
             return (
                 <React.Fragment>
                     <div>this is WithCategory Component</div>
-                    <WrappedComponent />
+                    <WrappedComponent {...this.props} />
                 </React.Fragment>
             )
         }

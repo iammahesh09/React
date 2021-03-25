@@ -41,7 +41,7 @@ function App() {
                 <Posts />
               </ThemeContext.Provider>
               <hr />
-              <Category />
+              <Category name='HOC' />
             </section>
           </div>
         </div>

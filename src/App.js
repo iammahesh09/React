@@ -5,6 +5,7 @@ import ThemeContext from "./Context/ThemeContext";
 import TitleContext from "./Context/TitleContext";
 import UserContext from "./Context/UserContext";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
+import Category from "./Components/Category/Category";
 
 function App() {
   const app_name = "React";
@@ -39,6 +40,8 @@ function App() {
               <ThemeContext.Provider value="dark">
                 <Posts />
               </ThemeContext.Provider>
+              <hr />
+              <Category />
             </section>
           </div>
         </div>

@@ -19,4 +19,4 @@ class Category extends Component {
     }
 }
 
-export default WithCategory(Category);
+export default WithCategory(3)(Category);

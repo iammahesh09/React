@@ -6,6 +6,7 @@ import TitleContext from "./Context/TitleContext";
 import UserContext from "./Context/UserContext";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 import Category from "./Components/Category/Category";
+import { RefText } from "./Components/RefText/RefText";
 
 function App() {
   const app_name = "React";
@@ -42,6 +43,8 @@ function App() {
               </ThemeContext.Provider>
               <hr />
               <Category name='HOC' />
+              <hr />
+              <RefText />
             </section>
           </div>
         </div>
